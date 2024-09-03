@@ -35,7 +35,7 @@ source "$ZSH_CUSTOM/aliases.zsh"
 
 
 
-### CONFIGURATION FOR CORE OH-MY-ZSH
+### OH-MY-ZSH CONFIGURATION
 
 # Shell Auto-Update Settings
 zstyle ":omz:update" mode auto    # Update without asking
@@ -46,7 +46,7 @@ PROMPT=" %F{magenta}MBP%f %~ %F{magenta}%(!.#.$)%f "
 
 
 
-### CONFIGURATION FOR OMZ PLUGINS
+### PLUGIN CONFIGURATIONS
 
 # colored-man-pages
 less_termcap[md]="${fg_bold[magenta]}"

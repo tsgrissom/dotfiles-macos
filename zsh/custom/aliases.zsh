@@ -46,6 +46,7 @@ alias tmks="tmux kill-server"
 alias rm='rm -i'
 
 # Miscellaneous
+alias br="brew"
 alias cls="clear"
 alias size='du -sh'
 alias rbw='lolcat'
