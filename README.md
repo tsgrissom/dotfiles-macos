@@ -1,3 +1,3 @@
-# Dotfiles
+# dotfiles
 
-This is my personal collection of dotfiles which are sharable with the public. Included dotfiles include: `.zshrc`, `.tmux.conf`, nvim's `init.lua`, and more.
+This is my public collection of personal dotfiles, including files configuring oh-my-zsh, tmux, neovim, and more.
