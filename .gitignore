@@ -1,1 +1,6 @@
 .DS_STORE
+
+# oh-my-zsh
+zsh/custom/example.zsh
+zsh/custom/plugins/
+zsh/custom/themes/
