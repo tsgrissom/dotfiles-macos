@@ -1,7 +1,6 @@
 ### github.com/tsgrissom .zshrc for macOS
 
 
-
 ### ENVIRONMENT VARIABLES
 
 export NVM_DIR="$HOME/.nvm" # Ensure NVM files are put in a hidden folder at $HOME
@@ -30,7 +29,6 @@ source "$ZSH/oh-my-zsh.sh"
 source "$ZSH_CUSTOM/aliases.zsh"
 
 
-
 ### OH-MY-ZSH CONFIGURATION
 
 # Shell Auto-Update Settings
@@ -39,7 +37,6 @@ zstyle ":omz:update" frequency 1  # Check for daily updates
 # Shell Basic Theming
 ZSH_THEME="alanpeabody"
 PROMPT=" %F{magenta}MBP%f %~ %F{magenta}%(!.#.$)%f "
-
 
 
 ### PLUGIN CONFIGURATIONS
@@ -52,7 +49,6 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 export ZSH_AUTOSUGGEST_STRATEGY=(completion) # formerly =(history completion)
 
 
-
 ### LATE-LOADERS
 
 # Sets Up Homebrew Completions
@@ -62,14 +58,10 @@ then
   autoload -Uz compinit
   compinit
 fi
+
 # DONT REORDER; Sets Up NVM, Node, and NPM + Completions
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # Load NVM
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Loads NVM bash completion
-# Source iTerm2 shell integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-# DONT REORDER; This should be loaded last
-# Source Homebrew's zsh-syntax-highlighting install
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -77,4 +69,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
+
+# Source iTerm2 shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# DONT MOVE; This should be loaded last
+# Source Homebrew's zsh-syntax-highlighting install
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
