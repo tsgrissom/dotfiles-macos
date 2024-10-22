@@ -4,15 +4,12 @@
 
 ### ENVIRONMENT VARIABLES
 
-# Ensure NVM files are put in a hidden folder at $HOME
-export NVM_DIR="$HOME/.nvm"
-# System Path Additions
-export PATH="$(brew --prefix)/opt/ruby/bin:$PATH"            # Prepend PATH with Homebrew Ruby install > macOS static Ruby
-export PATH="$(brew --prefix)/lib/ruby/gems/3.3.0/bin:$PATH" # Prepend PATH with executables from Ruby Gems
-# Set 1Password as the SSH Agent for oh-my-zsh
-export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-export ZSH="$HOME/.oh-my-zsh"
-
+export NVM_DIR="$HOME/.nvm" # Ensure NVM files are put in a hidden folder at $HOME
+export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Prepend system path with Homebrew Ruby install => Prefer brew Ruby > macOS static Ruby
+export PATH="$(brew --prefix)/lib/ruby/gems/3.3.0/bin:$PATH" # Prepend system path with executables from Ruby Gems
+export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" # Ensure 1Password is SSH Agent for oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh" # Ensure oh-my-zsh folder env variable is set to default location 
+export ZSH_CUSTOM="$HOME/.config/dotfiles/oh-my-zsh/custom" # Ensure 
 
 
 ### LOADING PLUGINS + SOURCING SHELL
@@ -39,7 +36,7 @@ source "$ZSH_CUSTOM/aliases.zsh"
 
 # Shell Auto-Update Settings
 zstyle ":omz:update" mode auto    # Update without asking
-zstyle ":omz:update" frequency 3  # Check for updates after three days
+zstyle ":omz:update" frequency 1  # Check for daily updates
 # Shell Basic Theming
 ZSH_THEME="alanpeabody"
 PROMPT=" %F{magenta}MBP%f %~ %F{magenta}%(!.#.$)%f "
@@ -78,3 +75,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Source Homebrew's zsh-syntax-highlighting install
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

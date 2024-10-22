@@ -17,13 +17,16 @@ local Plug = vim.fn['plug#']
 -- INITIALIZE VIM-PLUG + LOAD PLUGINS
 vim.call('plug#begin')
 
-Plug('ThePrimeagen/vim-be-good') -- Temp plugin
 
 -- Dependencies
 Plug('neovim/nvim-lspconfig')
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug('nvim-tree/nvim-web-devicons')
 Plug('nvim-lua/plenary.nvim')         -- Dependency of telescope.nvim
+
+-- Temporary, for learning neovim
+Plug('ThePrimeagen/vim-be-good')
+--Plug('m4xshen/hardtime.nvim')
 
 -- Base
 Plug('ms-jpq/coq_nvim')
@@ -76,6 +79,7 @@ vim.g.coq_settings = {
 	auto_start = true
 }
 require('gitsigns').setup()
+--require('hardtime').setup()
 require('mini.animate').setup()
 require('mini.comment').setup()
 require('mini.cursorword').setup()
