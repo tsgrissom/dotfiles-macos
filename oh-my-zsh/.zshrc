@@ -1,4 +1,5 @@
-### github.com/tsgrissom .zshrc for macOS
+# github.com/tsgrissom/dotfiles
+# Oh My Zsh - .zshrc for macOS
 
 
 ### ENVIRONMENT VARIABLES
@@ -8,7 +9,7 @@ export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Prepend system path with Hom
 export PATH="$(brew --prefix)/lib/ruby/gems/3.3.0/bin:$PATH" # Prepend system path with executables from Ruby Gems
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" # Ensure 1Password is SSH Agent for oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh" # Ensure oh-my-zsh folder env variable is set to default location 
-export ZSH_CUSTOM="$HOME/.config/dotfiles/oh-my-zsh/custom" # Ensure 
+export ZSH_CUSTOM="$HOME/.config/dotfiles/oh-my-zsh/custom" # Ensure zsh custom folder points to correct dotfiles location
 
 
 ### LOADING PLUGINS + SOURCING SHELL
@@ -27,6 +28,7 @@ plugins=(
 source "$ZSH/oh-my-zsh.sh"
 # Source custom zsh files, such as aliases
 source "$ZSH_CUSTOM/aliases.zsh"
+source "$ZSH_CUSTOM/places.zsh"
 
 
 ### OH-MY-ZSH CONFIGURATION
@@ -63,7 +65,7 @@ fi
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # Load NVM
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Loads NVM bash completion
 
-# pnpm
+# PNPM
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;

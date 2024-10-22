@@ -1,6 +1,7 @@
+# OS
 .DS_STORE
 
-# oh-my-zsh
+# Oh My Zsh
 ./oh-my-zsh/custom/example.zsh
 ./oh-my-zsh/custom/plugins/**
 ./oh-my-zsh/custom/themes/**
