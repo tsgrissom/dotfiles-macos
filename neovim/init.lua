@@ -13,10 +13,8 @@ local vim =  vim
 local Plug = vim.fn['plug#']
 
 
-
 -- INITIALIZE VIM-PLUG + LOAD PLUGINS
 vim.call('plug#begin')
-
 
 -- Dependencies
 Plug('neovim/nvim-lspconfig')
@@ -29,9 +27,6 @@ Plug('ThePrimeagen/vim-be-good')
 --Plug('m4xshen/hardtime.nvim')
 
 -- Base
-Plug('ms-jpq/coq_nvim')
-Plug('ms-jpq/coq.artifacts')
-Plug('ms-jpq/coq.thirdparty')
 Plug('lewis6991/gitsigns.nvim')
 Plug('echasnovski/mini.animate')
 Plug('echasnovski/mini.comment')
@@ -58,7 +53,6 @@ Plug('folke/which-key.nvim') -- TODO Configure
 vim.call('plug#end')
 
 
-
 -- CORE CONFIGURATION
 vim.wo.number = true     -- TODO: Line number toggle
 vim.opt.expandtab = true -- Prefer spaces > tab characters
@@ -68,16 +62,12 @@ vim.opt.shiftwidth = 2   -- Number of spaces to use for each step of auto-indent
 vim.cmd.colorscheme "catppuccin" -- Set the color scheme
 
 
-
 -- PLUGIN CONFIGURATION
 
 require('command-completion').setup({
 	tab_completion = true
 })
 --require('comment').setup()
-vim.g.coq_settings = {
-	auto_start = true
-}
 require('gitsigns').setup()
 --require('hardtime').setup()
 require('mini.animate').setup()
