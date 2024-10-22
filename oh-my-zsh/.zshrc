@@ -19,7 +19,6 @@ export ZSH_CUSTOM="$HOME/.config/dotfiles/oh-my-zsh/custom" # Ensure
 # oh-my-zsh plugins to load
 plugins=(
   colored-man-pages
-  fzf-zsh-plugin
   ssh
   thefuck
   zsh-autosuggestions
@@ -48,9 +47,6 @@ PROMPT=" %F{magenta}MBP%f %~ %F{magenta}%(!.#.$)%f "
 # colored-man-pages
 less_termcap[md]="${fg_bold[magenta]}"
 less_termcap[us]="${fg_bold[cyan]}"
-# fzf-zsh-plugin
-export FZF_PREVIEW_ADVANCED=true # TODO: Install lesspipe.sh
-export FZF_PREVIEW_WINDOW="right:65%:nohidden"
 # zsh-autosuggestions 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#949494"
 export ZSH_AUTOSUGGEST_STRATEGY=(completion) # formerly =(history completion)
