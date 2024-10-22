@@ -26,9 +26,6 @@ plugins=(
 )
 # Source oh-my-zsh
 source "$ZSH/oh-my-zsh.sh"
-# Source custom zsh files, such as aliases
-source "$ZSH_CUSTOM/aliases.zsh"
-source "$ZSH_CUSTOM/places.zsh"
 
 
 ### OH-MY-ZSH CONFIGURATION
