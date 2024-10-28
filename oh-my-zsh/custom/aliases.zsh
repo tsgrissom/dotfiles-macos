@@ -13,24 +13,28 @@ alias gp="  git push"
 alias gs="  git status"
 alias gl="  git log --oneline --decorate --color"
 
+## Homebrew
+alias br="  brew"
+alias brup="brew update && brew upgrade && brew cleanup" # Update brew packages quicker
+
 ## Neovim
 alias cvi="nvim $HOME/.config/nvim/init.lua"
 alias vi=" nvim"
 
 ## Oh My Zsh
-alias as=" glow $ZSH_CUSTOM/aliases.zsh" # Display zsh aliases
-alias cas="nvim $ZSH_CUSTOM/aliases.zsh" # Configure zsh aliases file
-alias csh="nvim $HOME/.zshrc" # Configure .zshrc
-alias rsh="source $HOME/.zshrc" # Refreshes shell with latest .zshrc
+alias as=" glow $ZSH_CUSTOM/aliases.zsh -l md" 
+alias cas="nvim $ZSH_CUSTOM/aliases.zsh"
+alias csh="nvim $HOME/.zshrc" 
+alias rsh="source $HOME/.zshrc"
 
 ## tmux
-alias ctx=" nvim $HOME/.tmux.conf" # Configure .tmux.conf
-alias rtx=" tmux source-file $HOME/.tmux.conf" # Refresh tmux with latest .tmux.conf
-alias tm="  tmux"
-alias tma=" tmux attach"
-alias tmd=" tmux detach"
-alias tmkp="tmux kill-pane"
-alias tmks="tmux kill-server"
+alias ctx=" nvim $HOME/.tmux.conf"
+alias rtx=" tmux source-file $HOME/.tmux.conf" 
+alias tx="  tmux"
+alias txa=" tmux attach"
+alias txd=" tmux detach"
+alias txkp="tmux kill-pane"
+alias txks="tmux kill-server"
 
 
 ### MISCELLANEOUS
@@ -40,12 +44,13 @@ alias cls="clear"
 alias dir="eza"
 
 ## Helper Commands
+alias mcup="  cd $HOME/Local/Servers/1.21.1 && ./run.command"
 alias ports=" nmap -sP 10.0.0.0/24" # Scan subnet for IPs in use
 alias size="  du -sh" # TODO Remove in favor of learning du
-alias update="brew update && brew upgrade && brew cleanup" # Update brew packages quicker
 
-## Replace 'ls'
-alias ls=" eza"
-alias lt=" eza --tree"
-alias lg=" eza --git"
-alias ll=" eza -la"
+## Replace "ls" with modern "eza"
+alias ls="eza"
+alias lt="eza --tree"
+alias lg="eza --git"
+alias ll="eza -la"
+alias la="eza -a"
