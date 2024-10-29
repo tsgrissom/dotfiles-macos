@@ -9,12 +9,10 @@ export PATH="$(brew --prefix)/opt/ruby/bin:$PATH" # Prepend system path with Hom
 export PATH="$(brew --prefix)/lib/ruby/gems/3.3.0/bin:$PATH" # Prepend system path with executables from Ruby Gems
 export SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" # Ensure 1Password is SSH Agent for oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh" # Ensure oh-my-zsh folder env variable is set to default location 
-export ZSH_CUSTOM="$HOME/.config/dotfiles/oh-my-zsh/custom" # Ensure zsh custom folder points to correct dotfiles location
+export ZSH_CUSTOM="$HOME/.config/dotfiles/zsh/custom" # Ensure zsh custom folder points to correct dotfiles location
 
 
 ### LOADING PLUGINS + SOURCING SHELL
-## Standard plugins -> $ZSH/plugins/
-## Custom plugins   -> $ZSH_CUSTOM/plugins/
 
 # oh-my-zsh plugins to load
 plugins=(
@@ -35,7 +33,8 @@ zstyle ":omz:update" mode auto    # Update without asking
 zstyle ":omz:update" frequency 1  # Check for daily updates
 # Shell Basic Theming
 ZSH_THEME="alanpeabody"
-PROMPT=" %F{magenta}MBP%f %~ %F{magenta}%(!.#.$)%f "
+ACCENT="%F{magenta}"
+PROMPT=" ${ACCENT}MBP%f %~ ${ACCENT}%(!.#.$)%f "
 
 
 ### PLUGIN CONFIGURATIONS
